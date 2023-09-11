@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:xml/xml.dart';
+import 'package:writer/logic.dart';
 import 'iface.dart';
 
 class LinuxRecentItem implements IRecentItem {
@@ -43,10 +44,12 @@ class LinuxRecentItem implements IRecentItem {
 }
 
 class LinuxRecentDocuments implements IRecentDocuments {
-  const LinuxRecentDocuments();
+  const LinuxRecentDocuments([ this._overrideFile ]);
+
+  final File? _overrideFile;
 
   File _getFile() =>
-    File('${Platform.environment["HOME"]}/.recently-used');
+    _overrideFile ?? File('$kUserHome/.recently-used');
 
   @override
   Future<List<IRecentItem>> read() async {
@@ -57,7 +60,9 @@ class LinuxRecentDocuments implements IRecentDocuments {
           LinuxRecentItem(
             file: File.fromUri(Uri.parse(el.getElement('URI')!.innerText)),
             mimeType: el.getElement('Mime-Type')!.innerText,
-            timestamp: DateTime.fromMicrosecondsSinceEpoch(int.parse(el.getElement('Timestamp')!.innerText) * Duration.millisecondsPerSecond),
+            timestamp: DateTime.fromMicrosecondsSinceEpoch(
+              int.parse(el.getElement('Timestamp')!.innerText) * Duration.millisecondsPerSecond
+            ),
           )
       ).toList();
     }

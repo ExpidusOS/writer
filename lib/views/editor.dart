@@ -9,6 +9,8 @@ class EditorView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final args = (ModalRoute.of(context)!.settings.arguments ?? <String, String>{}) as Map;
+    var name = args['path'].replaceFirst(kUserHome, '');
+    if (name[0] == '/') name = name.substring(1);
 
     return Scaffold(
       windowBar: WindowBar.shouldShow(context) ? WindowBar(
@@ -16,7 +18,7 @@ class EditorView extends StatelessWidget {
         title: Text(AppLocalizations.of(context)!.applicationTitle),
       ) : null,
       appBar: AppBar(
-        title: Text(args['path']),
+        title: Text(name),
       ),
     );
   }

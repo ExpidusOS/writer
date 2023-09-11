@@ -50,8 +50,8 @@ class _RecentDocumentsListState extends State<RecentDocumentsList> {
                 child: Row(
                   children: _items.map(
                     (value) =>
-                      IconButton(
-                        icon: DocumentIcon(path: value.file.path),
+                      TextButton(
+                        child: DocumentIcon(path: value.file.path),
                         onPressed: () {
                           final i = _items.indexWhere((e) => e.file.path == value.file.path);
                           _items.removeAt(i);

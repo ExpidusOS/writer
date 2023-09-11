@@ -1,3 +1,4 @@
+import 'package:path/path.dart' as Path;
 import 'package:libtokyo_flutter/libtokyo.dart';
 import 'package:writer/logic.dart';
 
@@ -11,5 +12,13 @@ class DocumentIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-    const SizedBox();
+    Column(
+      children: [
+        Icon(
+          Icons.short_text,
+          size: 106,
+        ),
+        Text(Path.basename(path)),
+      ],
+    );
 }
