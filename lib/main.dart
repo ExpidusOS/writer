@@ -150,6 +150,7 @@ class WriterAppState extends State<WriterApp> {
         ] : null,
         routes: {
           '/': (context) => const DocumentsView(),
+          '/editor': (context) => const EditorView(),
         },
       ),
     );

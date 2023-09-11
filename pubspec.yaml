@@ -33,6 +33,9 @@ dependencies:
   sentry_flutter: ^7.9.0
   shared_preferences: ^2.2.1
   url_launcher: ^6.1.14
+  xml: ^6.3.0
+  path_provider: ^2.1.1
+  xdg_directories: ^1.0.3
 
 dev_dependencies:
   flutter_test:
