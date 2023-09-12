@@ -27,7 +27,6 @@ class _RecentDocumentsListState extends State<RecentDocumentsList> {
         setState(() {
           _items.clear();
           _items.addAll(items);
-          print(_items);
         });
       })
       .catchError((error, stack) => reportError(error, trace: stack));

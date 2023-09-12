@@ -2,6 +2,7 @@
   "applicationTitle": "Writer",
   "applicationTitleFull": "ExpidusOS Writer",
   "viewDocuments": "Documents",
+  "viewSettings": "Settings",
   "listRecent": "Recent Documents",
   "actionNew": "New Document"
 }
