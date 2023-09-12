@@ -1,8 +1,8 @@
 {
-  "applicationTitle": "Writer",
-  "applicationTitleFull": "ExpidusOS Writer",
-  "viewDocuments": "Documents",
-  "viewSettings": "Settings",
-  "listRecent": "Recent Documents",
-  "actionNew": "New Document"
+  "applicationTitle": "ライター",
+  "applicationTitleFull": "ExpidusOSのライター",
+  "viewDocuments": "ドキュメント",
+  "viewSettings": "設定",
+  "listRecent": "最近のドキュメント",
+  "actionNew": "新しいドキュメント"
 }
