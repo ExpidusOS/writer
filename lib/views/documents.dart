@@ -105,7 +105,7 @@ class DocumentsView extends StatelessWidget {
                       color: Theme.of(context).colorScheme.primary,
                     ),
                     onDestinationSelected: _onNavPush,
-                    width: 210,
+                    width: 215,
                     extended: true,
                   ),
                 ),
