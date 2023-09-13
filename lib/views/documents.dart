@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:libtokyo_flutter/libtokyo.dart';
-import 'package:file_picker/file_picker.dart';
+import 'package:file_selector/file_selector.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:material_symbols_icons/symbols.dart';
@@ -17,16 +17,20 @@ class DocumentsView extends StatelessWidget {
       case 1:
         break;
       case 2:
-        FilePicker.platform.pickFiles(
-          type: FileType.custom,
-          allowedExtensions: FormatManager.of(context, listen: false).extensions,
-        ).then((result) async {
-          if (result != null) {
+        openFile(
+          acceptedTypeGroups: [
+            XTypeGroup(
+              label: 'Supported formats',
+              extensions: FormatManager.of(context, listen: false).extensions,
+            ),
+          ],
+        ).then((file) async {
+          if (file != null) {
             final recentDocuments = Provider.of<IRecentDocuments>(context, listen: false);
             final list = await recentDocuments.read();
             final item = recentDocuments.create(
-              file: File(result.files[0].path!),
-              mimeType: mime(result.files[0].path!)!,
+              file: File(file!.path),
+              mimeType: mime(file!.path)!,
             );
 
             final i = list.indexWhere((e) => e.file == item.file);

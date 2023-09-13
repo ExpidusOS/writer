@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Writer
+Comment=ExpidusOS Writer
+Categories=Utility;TextEditor;
+Icon=com.expidusos.writer
+Terminal=false
+Exec=writer

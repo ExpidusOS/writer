@@ -1,0 +1,32 @@
+app-id: com.expidusos.writer
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+separate-locales: false
+command: writer
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+  - --share=network
+modules:
+  - name: Writer
+    buildsystem: simple
+    build-commands:
+      - cp -R bundle /app/expidus_writer
+      - mkdir -p /app/bin && ln -s /app/expidus_writer/writer /app/bin/writer
+      - chmod +x /app/bin/writer
+      - install -D bundle/data/com.expidusos.writer.desktop /app/share/applications/com.expidusos.writer.desktop
+      - install -D com.expidusos.writer.metainfo.xml /app/share/metainfo/com.expidusos.writer.metainfo.xml
+      - install -D bundle/data/com.expidusos.writer.png /app/share/icons/hicolor/256x256/apps/com.expidusos.writer.png
+    sources:
+      - type: archive
+        only-arches:
+          - x86_64
+        url: https://github.com/ExpidusOS/writer/releases/download/@VERSION@/com.expidusos.writer-linux-x64.zip
+        sha256: @SHA256@
+        dest: bundle
+      - type: file
+        url: https://raw.githubusercontent.com/ExpidusOS/writer/@METAINFO_COMMIT@/data/com.expidusos.writer.metainfo.xml
+        sha256: @METAINFO_SHA256@
