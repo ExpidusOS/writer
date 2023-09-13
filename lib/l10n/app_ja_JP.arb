@@ -4,5 +4,6 @@
   "viewDocuments": "ドキュメント",
   "viewSettings": "設定",
   "listRecent": "最近のドキュメント",
-  "actionNew": "新しいドキュメント"
+  "actionNew": "新しいドキュメント",
+  "actionOpen": "ドキュメントを開く"
 }
