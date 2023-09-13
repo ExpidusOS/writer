@@ -4,5 +4,6 @@
   "viewDocuments": "Documents",
   "viewSettings": "Settings",
   "listRecent": "Recent Documents",
-  "actionNew": "New Document"
+  "actionNew": "New Document",
+  "actionOpen": "Open Document"
 }

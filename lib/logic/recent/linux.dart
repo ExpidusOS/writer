@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:xml/xml.dart';
 import 'package:writer/logic.dart';
@@ -43,8 +44,8 @@ class LinuxRecentItem implements IRecentItem {
     );
 }
 
-class LinuxRecentDocuments implements IRecentDocuments {
-  const LinuxRecentDocuments([ this._overrideFile ]);
+class LinuxRecentDocuments extends ChangeNotifier implements IRecentDocuments {
+  LinuxRecentDocuments([ this._overrideFile ]);
 
   final File? _overrideFile;
 
@@ -70,6 +71,14 @@ class LinuxRecentDocuments implements IRecentDocuments {
   }
 
   @override
+  IRecentItem create({ required File file, required String mimeType }) =>
+    LinuxRecentItem(
+      file: file,
+      mimeType: mimeType,
+      timestamp: DateTime.now(),
+    );
+
+  @override
   Future<void> write(List<IRecentItem> list) async {
     final builder = XmlBuilder();
     builder.processing('xml', 'version="1.0"');
@@ -79,5 +88,6 @@ class LinuxRecentDocuments implements IRecentDocuments {
 
     final document = builder.buildDocument();
     await _getFile().writeAsString(document.toXmlString(pretty: true, indent: '  '));
+    notifyListeners();
   }
 }

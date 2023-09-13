@@ -135,6 +135,8 @@ class WriterAppState extends State<WriterApp> {
     MultiProvider(
       providers: [
         Provider(create: (context) => preferences),
+        Provider(create: (context) => FormatManager()),
+        ChangeNotifierProvider(create: (context) => LinuxRecentDocuments() as IRecentDocuments),
       ],
       child: TokyoApp(
         onGenerateTitle: (context) => AppLocalizations.of(context)!.applicationTitle,

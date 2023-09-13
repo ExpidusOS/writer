@@ -1,15 +1,50 @@
+import 'dart:io';
 import 'package:libtokyo_flutter/libtokyo.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:mime_type/mime_type.dart';
+import 'package:provider/provider.dart';
 import 'package:writer/logic.dart';
 import 'package:writer/widgets.dart';
 
 class DocumentsView extends StatelessWidget {
   const DocumentsView({ super.key });
 
-  void _onNavPush(int i) {
-    print(i);
+  void _onNavPush(BuildContext context, int i) {
+    switch (i) {
+      case 1:
+        break;
+      case 2:
+        FilePicker.platform.pickFiles(
+          type: FileType.custom,
+          allowedExtensions: FormatManager.of(context, listen: false).extensions,
+        ).then((result) async {
+          if (result != null) {
+            final recentDocuments = Provider.of<IRecentDocuments>(context, listen: false);
+            final list = await recentDocuments.read();
+            final item = recentDocuments.create(
+              file: File(result.files[0].path!),
+              mimeType: mime(result.files[0].path!)!,
+            );
+
+            final i = list.indexWhere((e) => e.file == item.file);
+            if (i == -1) list.insert(0, item);
+            else list[i] = item;
+            await recentDocuments.write(list);
+
+            Navigator.pushNamed(
+              context,
+              '/editor',
+              arguments: {
+                'path': item.file.path,
+              },
+            );
+          }
+        }).catchError((error, stack) => reportError(error, trace: stack));
+        break;
+    }
   }
 
   @override
@@ -22,6 +57,10 @@ class DocumentsView extends StatelessWidget {
       NavigationDestination(
         icon: const Icon(Symbols.note_add),
         label: AppLocalizations.of(context)!.actionNew,
+      ),
+      NavigationDestination(
+        icon: const Icon(Symbols.file_open),
+        label: AppLocalizations.of(context)!.actionOpen,
       ),
       NavigationDestination(
         icon: const Icon(Icons.settings),
@@ -48,7 +87,7 @@ class DocumentsView extends StatelessWidget {
                       ListTile(
                         title: Text(value.label),
                         leading: value.icon,
-                        onTap: () => _onNavPush(i),
+                        onTap: () => _onNavPush(context, i),
                       )
                     )
                 )
@@ -80,7 +119,7 @@ class DocumentsView extends StatelessWidget {
                     unselectedIconTheme: IconTheme.of(context).copyWith(
                       color: Theme.of(context).colorScheme.primary,
                     ),
-                    onDestinationSelected: _onNavPush,
+                    onDestinationSelected: (i) => _onNavPush(context, i),
                   ),
                 ),
             ),
@@ -104,8 +143,8 @@ class DocumentsView extends StatelessWidget {
                     unselectedIconTheme: IconTheme.of(context).copyWith(
                       color: Theme.of(context).colorScheme.primary,
                     ),
-                    onDestinationSelected: _onNavPush,
-                    width: 215,
+                    onDestinationSelected: (i) => _onNavPush(context, i),
+                    width: 230,
                     extended: true,
                   ),
                 ),

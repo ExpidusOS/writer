@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 
 abstract class IRecentItem {
   const IRecentItem({
@@ -14,7 +15,8 @@ abstract class IRecentItem {
   IRecentItem copyWith({ DateTime? timestamp });
 }
 
-abstract class IRecentDocuments {
+abstract class IRecentDocuments extends ChangeNotifier {
   Future<List<IRecentItem>> read();
+  IRecentItem create({ required File file, required String mimeType });
   Future<void> write(List<IRecentItem> list);
 }
