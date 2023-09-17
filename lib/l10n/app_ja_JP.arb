@@ -11,5 +11,14 @@
   "settingsTheme": "Theme",
   "settingsOptInErrorReportingTitle": "Opt-in to error reporting via Sentry",
   "settingsOptInErrorReportingSubtitle": "Will take effect after restarting the application",
-  "settingsRestore": "Restore default settings"
+  "settingsRestore": "Restore default settings",
+  "documentName": "Document Name",
+  "documentNameCancel": "Cancel",
+  "documentNameEnter": "Create",
+  "documentNameField": "Name",
+  "documentNameType": "Type",
+  "formatAll": "All formats",
+  "formatRaw": "Raw formats",
+  "formatRich": "Rich formats",
+  "formatCode": "Code formats"
 }
