@@ -3,7 +3,6 @@ import 'package:libtokyo_flutter/libtokyo.dart';
 import 'package:file_selector/file_selector.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:material_symbols_icons/symbols.dart';
 import 'package:mime_type/mime_type.dart';
 import 'package:provider/provider.dart';
 import 'package:writer/logic.dart';
@@ -59,15 +58,15 @@ class DocumentsView extends StatelessWidget {
         label: AppLocalizations.of(context)!.viewDocuments,
       ),
       NavigationDestination(
-        icon: const Icon(Symbols.note_add),
+        icon: const Icon(Icons.fileCirclePlus),
         label: AppLocalizations.of(context)!.actionNew,
       ),
       NavigationDestination(
-        icon: const Icon(Symbols.file_open),
+        icon: const Icon(Icons.filePen),
         label: AppLocalizations.of(context)!.actionOpen,
       ),
       NavigationDestination(
-        icon: const Icon(Icons.settings),
+        icon: const Icon(Icons.gears),
         label: AppLocalizations.of(context)!.viewSettings,
       ),
     ];

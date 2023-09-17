@@ -15,8 +15,8 @@ class DocumentIcon extends StatelessWidget {
     Column(
       children: [
         Icon(
-          Icons.short_text,
-          size: 106,
+          Icons.fileLines,
+          size: 48,
         ),
         Text(Path.basename(path)),
       ],

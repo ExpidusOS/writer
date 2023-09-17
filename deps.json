@@ -23,12 +23,28 @@
       "xdg_directories",
       "flutter_adaptive_scaffold",
       "path",
-      "material_symbols_icons",
       "mime_type",
       "file_selector",
       "flutter_test",
-      "flutter_lints"
+      "flutter_lints",
+      "win32"
     ]
+  },
+  {
+    "name": "win32",
+    "version": "5.0.7",
+    "kind": "transitive",
+    "source": "hosted",
+    "dependencies": [
+      "ffi"
+    ]
+  },
+  {
+    "name": "ffi",
+    "version": "2.1.0",
+    "kind": "transitive",
+    "source": "hosted",
+    "dependencies": []
   },
   {
     "name": "flutter_lints",
@@ -308,7 +324,7 @@
   },
   {
     "name": "http",
-    "version": "0.13.6",
+    "version": "1.1.0",
     "kind": "transitive",
     "source": "hosted",
     "dependencies": [
@@ -434,15 +450,6 @@
     "dependencies": []
   },
   {
-    "name": "material_symbols_icons",
-    "version": "4.2668.0",
-    "kind": "direct",
-    "source": "hosted",
-    "dependencies": [
-      "flutter"
-    ]
-  },
-  {
     "name": "flutter_adaptive_scaffold",
     "version": "0.1.7+1",
     "kind": "direct",
@@ -487,22 +494,6 @@
       "path_provider_platform_interface",
       "win32"
     ]
-  },
-  {
-    "name": "win32",
-    "version": "3.1.4",
-    "kind": "transitive",
-    "source": "hosted",
-    "dependencies": [
-      "ffi"
-    ]
-  },
-  {
-    "name": "ffi",
-    "version": "2.1.0",
-    "kind": "transitive",
-    "source": "hosted",
-    "dependencies": []
   },
   {
     "name": "path_provider_platform_interface",
@@ -772,7 +763,7 @@
   },
   {
     "name": "package_info_plus",
-    "version": "3.1.2",
+    "version": "4.1.0",
     "kind": "direct",
     "source": "hosted",
     "dependencies": [
@@ -915,7 +906,30 @@
       "bitsdojo_window",
       "shared_preferences",
       "pubspec",
-      "url_launcher"
+      "url_launcher",
+      "google_fonts",
+      "font_awesome_flutter"
+    ]
+  },
+  {
+    "name": "font_awesome_flutter",
+    "version": "10.5.0",
+    "kind": "transitive",
+    "source": "hosted",
+    "dependencies": [
+      "flutter"
+    ]
+  },
+  {
+    "name": "google_fonts",
+    "version": "5.1.0",
+    "kind": "transitive",
+    "source": "hosted",
+    "dependencies": [
+      "flutter",
+      "http",
+      "path_provider",
+      "crypto"
     ]
   },
   {
