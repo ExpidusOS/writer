@@ -3,7 +3,13 @@
   "applicationTitleFull": "ExpidusOS Writer",
   "viewDocuments": "Documents",
   "viewSettings": "Settings",
+  "viewAbout": "About",
+  "viewPrivacy": "Privacy Policy",
   "listRecent": "Recent Documents",
   "actionNew": "New Document",
-  "actionOpen": "Open Document"
+  "actionOpen": "Open Document",
+  "settingsTheme": "Theme",
+  "settingsOptInErrorReportingTitle": "Opt-in to error reporting via Sentry",
+  "settingsOptInErrorReportingSubtitle": "Will take effect after restarting the application",
+  "settingsRestore": "Restore default settings"
 }

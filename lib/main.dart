@@ -152,7 +152,10 @@ class WriterAppState extends State<WriterApp> {
         ] : null,
         routes: {
           '/': (context) => const DocumentsView(),
+          '/about': (context) => const AboutView(),
           '/editor': (context) => const EditorView(),
+          '/privacy': (context) => const PrivacyView(),
+          '/settings': (context) => const SettingsView(),
         },
       ),
     );

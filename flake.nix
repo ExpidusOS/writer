@@ -42,7 +42,7 @@
           nativeBuildInputs = with pkgs; [ wrapGAppsHook ];
 
           depsListFile = ./deps.json;
-          vendorHash = "sha256-k0CtZyI8VQ9Rgk0Yw0pPaQIXcIpF/i/2WxVuw6CAHgQ=";
+          vendorHash = "sha256-nld5K+eoIIbKR9ni5C9JfiNwosrBRZPUoAOKK2LQJ5M=";
 
           postInstall = ''
             rm $out/bin/writer

@@ -47,6 +47,12 @@ class DocumentsView extends StatelessWidget {
           }
         }).catchError((error, stack) => reportError(error, trace: stack));
         break;
+      case 3:
+        Navigator.pushNamed(
+          context,
+          '/settings'
+        );
+        break;
     }
   }
 

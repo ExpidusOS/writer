@@ -25,6 +25,8 @@
       "path",
       "mime_type",
       "file_selector",
+      "flutter_markdown",
+      "markdown",
       "flutter_test",
       "flutter_lints",
       "win32"
@@ -273,6 +275,35 @@
     "kind": "transitive",
     "source": "sdk",
     "dependencies": []
+  },
+  {
+    "name": "markdown",
+    "version": "7.1.1",
+    "kind": "direct",
+    "source": "hosted",
+    "dependencies": [
+      "args",
+      "meta"
+    ]
+  },
+  {
+    "name": "args",
+    "version": "2.4.2",
+    "kind": "transitive",
+    "source": "hosted",
+    "dependencies": []
+  },
+  {
+    "name": "flutter_markdown",
+    "version": "0.6.17+3",
+    "kind": "direct",
+    "source": "hosted",
+    "dependencies": [
+      "flutter",
+      "markdown",
+      "meta",
+      "path"
+    ]
   },
   {
     "name": "file_selector",
