@@ -29,10 +29,10 @@ class _RecentDocumentsListState extends State<RecentDocumentsList> {
         if (snapshot.hasData) {
           final items = snapshot.data!;
 
-          if (items.isEmpty) return const SizedBox();
-
           final fmtmngr = FormatManager.of(context);
-          items.removeWhere((e) => fmtmngr.extensions.indexOf(path.extension(e.file.path).substring(1)) == -1);
+          items.removeWhere((e) => fmtmngr.formats.indexWhere((f) => f.ext == path.extension(e.file.path).substring(1)) == -1);
+
+          if (items.isEmpty) return const SizedBox();
 
           return Padding(
             padding: const EdgeInsets.all(8),
