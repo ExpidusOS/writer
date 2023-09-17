@@ -3,7 +3,13 @@
   "applicationTitleFull": "ExpidusOSのライター",
   "viewDocuments": "ドキュメント",
   "viewSettings": "設定",
+  "viewAbout": "About",
+  "viewPrivacy": "Privacy Policy",
   "listRecent": "最近のドキュメント",
   "actionNew": "新しいドキュメント",
-  "actionOpen": "ドキュメントを開く"
+  "actionOpen": "ドキュメントを開く",
+  "settingsTheme": "Theme",
+  "settingsOptInErrorReportingTitle": "Opt-in to error reporting via Sentry",
+  "settingsOptInErrorReportingSubtitle": "Will take effect after restarting the application",
+  "settingsRestore": "Restore default settings"
 }
