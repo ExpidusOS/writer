@@ -3,7 +3,22 @@
   "applicationTitleFull": "ExpidusOSのライター",
   "viewDocuments": "ドキュメント",
   "viewSettings": "設定",
+  "viewAbout": "について",
+  "viewPrivacy": "プライバシーポリシー",
   "listRecent": "最近のドキュメント",
   "actionNew": "新しいドキュメント",
-  "actionOpen": "ドキュメントを開く"
+  "actionOpen": "ドキュメントを開く",
+  "settingsTheme": "テーマ",
+  "settingsOptInErrorReportingTitle": "Sentry 経由のエラー報告へのオプトイン",
+  "settingsOptInErrorReportingSubtitle": "アプリケーションを再起動した後に有効になります",
+  "settingsRestore": "初期設定に戻す",
+  "documentName": "ドキュメント名",
+  "documentNameCancel": "キャンセル",
+  "documentNameEnter": "作成する",
+  "documentNameField": "名前",
+  "documentNameType": "タイプ",
+  "formatAll": "すべての書式",
+  "formatRaw": "生の形式",
+  "formatRich": "リッチフォーマット",
+  "formatCode": "コードフォーマット"
 }
